@@ -1,0 +1,18 @@
+Instructions on Deploying:
+
+Ensure you have a running Kubernetes cluster.
+
+Apply the deployment YAML file using the following command:
+kubectl apply -f uniflow-deployment.yaml
+
+Monitor the deployment status:
+kubectl get deployments
+
+Ensure that the AVAILABLE column for your uniflow-deployment shows the desired number of replicas.
+
+Expose the service if needed:
+kubectl expose deployment uniflow-deployment --type=LoadBalancer --name=uniflow-service
+
+Note: Adjust the service type based on your cluster environment (e.g., LoadBalancer, NodePort, etc.).
+
+Access your Uniflow application using the exposed service's IP or hostname.
